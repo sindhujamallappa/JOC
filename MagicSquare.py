@@ -28,14 +28,14 @@ Steps:
 4. If anytime the row position becomes -1 and columb becomes n, switch it to (0,n-2)
 '''
 
-def magic_square(n):
+def magic_square(n): #n-num of row n column
     
-    magicSquare=[]
-    for i in range(n):
-        l=[]
-        for j in range(n):
-            l.append(0)
-        magicSquare.append(l)
+    magicSquare=[] #list used as a matrix
+    for i in range(n): #row
+        l=[] #initail list (empty)
+        for j in range(n): #column
+            l.append(0) #initially all values 0
+        magicSquare.append(l) #after each row is appended to 0, row gets appended to the matrix
         
     i=n//2
     j=n-1
