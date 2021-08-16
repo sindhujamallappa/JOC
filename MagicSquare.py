@@ -4,6 +4,29 @@ Created on Tue Apr 13 11:15:05 2021
 
 @author: Sindhuja Mallappa
 """
+# Rules
+# given number n create a matrix of size n*n 
+# n should b odd 
+# sum of each, row and diagonal should be m
+
+'''
+Facts
+M=n(n^2+1)/2
+
+Patterns:
+Position of 1 is in the middle row of the last column
+next number ie. 2, 1 row less and 1 column more
+    if no row above => go to last row
+    if no column next(right) => first column
+Position contains a number => col (-2) and row (+1)
+if no row above and no column next =>(first row, second last column)
+Steps:
+1. In any magic square, 1 is located at position(n/2, n-1) n/2-row, n-1-column
+2. Lets say the position of 1 i.e. (n/2,n-1) is (p,q)=(row,column) then the next number which is 2 is located at (p-1,q+1) podition
+    Anytime if the calculated row position becomes -1 then make it n-1 and if column position becomes n then make it 0
+3. If the calculated position already contains a number then decrement the column by 2 and increment the row by 1
+4. If anytime the row position becomes -1 and columb becomes n, switch it to (0,n-2)
+'''
 
 def magic_square(n):
     
